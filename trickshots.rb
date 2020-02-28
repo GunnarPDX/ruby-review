@@ -33,3 +33,18 @@ puts ''
 
 
 # 5
+require 'ripper'
+ap Ripper.sexp("puts {}.class")
+puts ''
+
+
+# 6
+names = %w{fred jess john}
+ages = [38, 50, 78]
+
+p names.zip(ages) # => [["fred", 38], ["jess", 50], ["john", 78]]
+p Hash[names.zip(ages)] # => {"fred"=>38, "jess"=>50, "john"=>78}
+
+locations = %w{spain france usa}
+p names.zip(ages, locations) # => [["fred", 38, "spain"], ["jess", 50, "france"], ["john", 78, "usa"]]
+

@@ -48,4 +48,10 @@ p Hash[names.zip(ages)] # => {"fred"=>38, "jess"=>50, "john"=>78}
 locations = %w{spain france usa}
 p names.zip(ages, locations) # => [["fred", 38, "spain"], ["jess", 50, "france"], ["john", 78, "usa"]]
 
+names.zip(ages, locations) do |foo|
+  p foo
+end
+
+
+# 7
 

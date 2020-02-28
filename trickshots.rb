@@ -38,6 +38,7 @@ ap Ripper.sexp("puts {}.class")
 puts ''
 
 
+
 # 6
 names = %w{fred jess john}
 ages = [38, 50, 78]
@@ -47,11 +48,30 @@ p Hash[names.zip(ages)] # => {"fred"=>38, "jess"=>50, "john"=>78}
 
 locations = %w{spain france usa}
 p names.zip(ages, locations) # => [["fred", 38, "spain"], ["jess", 50, "france"], ["john", 78, "usa"]]
+puts ''
 
 names.zip(ages, locations) do |foo|
   p foo
 end
+puts ''
+
 
 
 # 7
+p [*10...20] # => [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+puts ''
 
+
+
+# 8
+def my_example_method
+  p __method__
+  p __callee__
+end
+
+my_example_method
+puts ''
+
+
+
+# 9

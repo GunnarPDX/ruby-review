@@ -75,3 +75,35 @@ puts ''
 
 
 # 9
+a = ->{ }
+b = ->{ }
+
+p a.source_location
+p b.source_location
+puts ''
+
+
+
+# 10
+string = 'Fred Flintstone: Superhero'
+
+p string[/\w/] #=> F
+p string[/\w+/] #=> Fred
+p string[/(\w+) (\w+)/] #=> Fred Flintstone
+p string[/(\w+) (\w+)/, 1] #=> Fred
+p string[/(\w+) (\w+)/, 2] #=> Flintstone
+
+string[/(?<a>\w+) (?<b>\w+)/]
+p $~[:a] #=> Fred
+p $~[:b] #=> Flintstone
+
+string = 'xVal yVal'
+/(?<x>\w+) (?<y>\w+)/ =~ string
+p x # => xVal
+p y # => yVal
+
+puts ''
+
+
+
+# 11
